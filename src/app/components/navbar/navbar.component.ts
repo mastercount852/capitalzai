@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,25 +7,29 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  atTop = true;
+  constructor(private translate: TranslateService) { }
 
-  // declare primeiro
   languages = [
     { code: 'pt', label: 'Português', flag: '🇧🇷' },
     { code: 'en', label: 'English', flag: '🇺🇸' },
-    { code: 'fr', label: 'Français', flag: '🇫🇷' },
     { code: 'es', label: 'Español', flag: '🇪🇸' },
-    { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
-    { code: 'zh-Hant', label: '中文（繁體）', flag: '🇹🇼' },
     { code: 'ru', label: 'Русский', flag: '🇷🇺' },
+    { code: 'zh-TW', label: '中文（繁體）', flag: '🇹🇼' }
   ];
 
-  // agora pode usar
-  currentLang: string = this.languages[0].label;
-  currentFlag: string = this.languages[0].flag;
+
+  currentLang = this.languages[0].label;
+  currentFlag = this.languages[0].flag;
+  atTop = true;
 
   ngOnInit(): void {
     this.onScroll();
+
+    // sincroniza o rótulo/emoji com o idioma atual
+    const code = this.translate.currentLang || this.translate.getDefaultLang() || 'en';
+    const found = this.languages.find(l => l.code === code) ?? this.languages[1]; // en
+    this.currentLang = found.label;
+    this.currentFlag = found.flag;
   }
 
   @HostListener('window:scroll', [])
@@ -33,6 +38,8 @@ export class NavbarComponent implements OnInit {
   }
 
   setLang(lang: { code: string; label: string; flag: string }): void {
+    this.translate.use(lang.code);       // <<< muda o idioma de fato
+    localStorage.setItem('lang', lang.code);
     this.currentLang = lang.label;
     this.currentFlag = lang.flag;
   }

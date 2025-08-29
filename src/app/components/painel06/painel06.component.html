@@ -2,8 +2,8 @@
     <div class="reviews__container">
         <!-- ESQUERDA -->
         <div class="reviews__left">
-            <h2 class="reviews__title">O que as pessoas dizem sobre nós</h2>
-            <p class="reviews__subtitle">Milhares de clientes que confiam e ganham diariamente!</p>
+            <h2 class="reviews__title">{{ "painel-06-01" | translate }}</h2>
+            <p class="reviews__subtitle">{{ "painel-06-02" | translate }}</p>
 
             <!-- CARROSSEL -->
             <div class="carousel" (mouseenter)="pause()" (mouseleave)="resume()">
@@ -35,12 +35,8 @@
 
         <!-- DIREITA -->
         <aside class="reviews__right">
-            <h3 class="all-title">Todas as avaliações:</h3>
-            <p class="all-text">
-                O feedback dos nossos clientes nos ajuda e fortalece para que mantenhamos a qualidade e a melhor
-                experiência de negociação do mercado.
-            </p>
-            <!-- <button type="button" class="btn-button-theme">FAZER A MINHA AVALIAÇÃO</button> -->
+            <h3 class="all-title">{{ "painel-06-03" | translate }}</h3>
+            <p class="all-text">{{ "painel-06-04" | translate }}</p>
         </aside>
     </div>
 </section>

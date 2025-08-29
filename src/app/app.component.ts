@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'capitalzai';
+  constructor(private translate: TranslateService) {
+    translate.addLangs(['en', 'pt']);
+    translate.setDefaultLang('en');
+
+    const saved = localStorage.getItem('lang');
+    const browser = translate.getBrowserLang();
+    const initial = (saved && ['en', 'pt'].includes(saved)) ? saved
+      : (browser && ['en', 'pt'].includes(browser)) ? browser
+        : 'en';
+
+    translate.use(initial);
+  }
 }

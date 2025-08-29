@@ -1,23 +1,17 @@
 <section class="contact-hero">
     <div class="container hero__content">
         <div class="hero__left">
-            <h1 class="hero__title">FALE CONOSCO</h1>
-            <p class="hero__subtitle">
-                Precisa de ajuda? Entre em contato com nossa equipe de suporte especializado!
-            </p>
+            <h1 class="hero__title">{{ "contact-01" | translate }}</h1>
+            <p class="hero__subtitle">{{ "contact-02" | translate }}</p>
         </div>
     </div>
 </section>
 
 <section class="support-intro">
     <div class="container">
-        <h2 class="support__title">Estamos aqui para ajudar</h2>
-        <p class="support__sub">Suporte 24 horas, 7 dias por semana quando você precisar</p>
-        <p class="support__text">
-            Nossa equipe especializada de suporte ao cliente está disponível para prestar assistência onde
-            quer que você esteja e sempre que precisar. Entre em contato conosco por meio de métodos
-            convenientes – e-mail, Live Chat, WhatsApp e muito mais!
-        </p>
+        <h2 class="support__title">{{ "contact-03" | translate }}</h2>
+        <p class="support__sub">{{ "contact-04" | translate }}</p>
+        <p class="support__text">{{ "contact-05" | translate }}</p>
     </div>
 </section>
 
@@ -25,43 +19,42 @@
     <div class="container">
         <div class="form-card">
             <div class="form-card__head">
-                <h3>Fale conosco</h3>
-                <p>Para fazer perguntas, obter assistência ou explorar nossos serviços, entre em contato com nossa
-                    equipe dedicada.</p>
+                <h3>{{ "contact-06" | translate }}</h3>
+                <p>{{ "contact-07" | translate }}</p>
             </div>
 
             <form class="form" (submit)="onSubmit($event)" novalidate>
                 <div class="fields">
                     <!-- Nome -->
                     <label class="field">
-                        <span class="label">Nome</span>
+                        <span class="label">{{ "contact-08" | translate }}</span>
                         <input type="text" name="firstName" placeholder="Ex.: John" required>
                     </label>
 
                     <!-- Sobrenome -->
                     <label class="field">
-                        <span class="label">Sobrenome</span>
+                        <span class="label">{{ "contact-09" | translate }}</span>
                         <input type="text" name="lastName" placeholder="Ex.: Doe" required>
                     </label>
 
                     <!-- Email -->
                     <label class="field">
-                        <span class="label">Email</span>
+                        <span class="label">{{ "contact-10" | translate }}</span>
                         <input type="email" name="email" placeholder="Ex.: joao@example.com" required>
                     </label>
 
                     <!-- País -->
                     <label class="field">
-                        <span class="label">País</span>
+                        <span class="label">{{ "contact-11" | translate }}</span>
                         <select name="country" required>
-                            <option value="" selected disabled>Selecione seu país</option>
+                            <option value="" selected disabled>{{ "contact-12" | translate }}</option>
                             <option *ngFor="let c of countries" [value]="c.code">{{ c.flag }} {{ c.name }}</option>
                         </select>
                     </label>
 
                     <!-- DDI + Telefone -->
                     <label class="field field--compact">
-                        <span class="label">Número de Telefone</span>
+                        <span class="label">{{ "contact-13" | translate }}</span>
                         <div class="phone">
                             <select name="ddi" class="ddi" aria-label="DDI" required>
                                 <option value="+55">+55</option>
@@ -77,16 +70,16 @@
 
                     <!-- Assunto -->
                     <label class="field">
-                        <span class="label">Assunto</span>
+                        <span class="label">{{ "contact-14" | translate }}</span>
                         <select name="subject" required>
-                            <option value="" selected disabled>Selecionar</option>
+                            <option value="" selected disabled>{{ "contact-15" | translate }}</option>
                             <option *ngFor="let s of subjects" [value]="s">{{ s }}</option>
                         </select>
                     </label>
 
                     <!-- Mensagem -->
                     <label class="field field--full">
-                        <span class="label">Envie-nos uma mensagem (opcional)</span>
+                        <span class="label">{{ "contact-16" | translate }}</span>
                         <textarea name="message" rows="3"
                             placeholder="Por favor, informe sobre sua consulta"></textarea>
                     </label>
@@ -96,10 +89,10 @@
                 <div class="form__foot">
                     <label class="captcha">
                         <input type="checkbox" name="notRobot" required>
-                        <span>Não sou um robô</span>
+                        <span>{{ "contact-17" | translate }}</span>
                     </label>
 
-                    <button type="submit" class="btn-button-theme submit-btn">ENVIAR CONSULTA</button>
+                    <button type="submit" class="btn-button-theme submit-btn">{{ "contact-18" | translate }}</button>
                 </div>
             </form>
         </div>
@@ -113,8 +106,8 @@
         <!-- Estado: carregando -->
         <div *ngIf="isLoading" class="modal-body">
             <div class="spinner" aria-hidden="true"></div>
-            <h3 id="sendTitle">Enviando sua solicitação…</h3>
-            <p>Estamos processando seus dados. Isso pode levar alguns segundos.</p>
+            <h3 id="sendTitle">{{ "contact-19" | translate }}</h3>
+            <p>{{ "contact-20" | translate }}</p>
         </div>
 
         <!-- Estado: sucesso -->
@@ -125,11 +118,11 @@
                     <path d="M14 27.5l7.5 7.5L38 18" fill="none"></path>
                 </svg>
             </div>
-            <h3 id="sendTitle">Mensagem enviada com sucesso!</h3>
-            <p>Sua solicitação foi recebida. Nossa equipe entrará em contato em breve.</p>
+            <h3 id="sendTitle">{{ "contact-21" | translate }}</h3>
+            <p>{{ "contact-22" | translate }}</p>
 
             <div class="modal-actions">
-                <button type="button" class="btn-button-theme" (click)="closeModal()">OK, fechar</button>
+                <button type="button" class="btn-button-theme" (click)="closeModal()">{{ "contact-23" | translate }}</button>
             </div>
         </div>
     </div>

@@ -19,4 +19,5 @@
 
 .btn-button-theme:hover {
     background-image: linear-gradient(to right, #1de072, #428a61);
+    color: #fff;
 }

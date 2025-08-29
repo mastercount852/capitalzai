@@ -19,6 +19,15 @@ import { Painel09Component } from './components/painel09/painel09.component';
 import { Painel010Component } from './components/painel010/painel010.component';
 import { AtivosComponent } from './pages/ativos/ativos.component';
 import { SobreNosComponent } from './pages/sobre-nos/sobre-nos.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -38,13 +47,23 @@ import { SobreNosComponent } from './pages/sobre-nos/sobre-nos.component';
     Painel09Component,
     Painel010Component,
     AtivosComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    ComoFuncionaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

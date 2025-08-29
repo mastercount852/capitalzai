@@ -1,52 +1,232 @@
 <section class="faq">
-    <div class="faq__container">
-        <!-- COLUNA ESQUERDA -->
-        <aside class="faq__left">
-            <span class="badge">
-                <span class="badge__dot" aria-hidden="true"></span>
-                FAQ
+  <div class="faq__container">
+    <!-- COLUNA ESQUERDA -->
+    <aside class="faq__left">
+      <span class="badge">
+        <span class="badge__dot" aria-hidden="true"></span>
+        {{ "faq-01" | translate }}
+      </span>
+
+      <h2 class="title">{{ "faq-02" | translate }}</h2>
+
+      <p class="subtitle">
+        {{ "faq-03" | translate }}
+      </p>
+
+      <button class="btn-button-theme contact-btn">
+        {{ "faq-04" | translate }}
+      </button>
+
+      <ul class="highlights" [attr.aria-label]="'faq-05' | translate">
+        <li>{{ "faq-06" | translate }}</li>
+        <li>{{ "faq-07" | translate }}</li>
+        <li>{{ "faq-08" | translate }}</li>
+      </ul>
+    </aside>
+
+    <!-- COLUNA DIREITA (ACORDEÃO) -->
+    <div class="faq__right">
+      <ul class="accordion" role="list">
+        <!-- 1 -->
+        <li class="acc-item" [class.open]="active === 0" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(0)"
+                  [attr.aria-expanded]="active === 0"
+                  aria-controls="faq-panel-0" id="faq-header-0">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">1</span>
+              <span class="acc-q">{{ "faq-09" | translate }}</span>
             </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-0" role="region"
+               aria-labelledby="faq-header-0"
+               [style.maxHeight]="active === 0 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-10" | translate }}</p>
+            </div>
+          </div>
+        </li>
 
-            <h2 class="title">
-                Tudo que você precisa saber sobre a nossa corretora
-            </h2>
+        <!-- 2 -->
+        <li class="acc-item" [class.open]="active === 1" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(1)"
+                  [attr.aria-expanded]="active === 1"
+                  aria-controls="faq-panel-1" id="faq-header-1">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">2</span>
+              <span class="acc-q">{{ "faq-11" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-1" role="region"
+               aria-labelledby="faq-header-1"
+               [style.maxHeight]="active === 1 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-12" | translate }}</p>
+            </div>
+          </div>
+        </li>
 
-            <p class="subtitle">
-                Abertura de conta, depósitos/saques, custos, segurança, alavancagem e plataformas —
-                reunimos as respostas às perguntas mais comuns dos nossos clientes.
-            </p>
+        <!-- 3 -->
+        <li class="acc-item" [class.open]="active === 2" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(2)"
+                  [attr.aria-expanded]="active === 2"
+                  aria-controls="faq-panel-2" id="faq-header-2">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">3</span>
+              <span class="acc-q">{{ "faq-13" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-2" role="region"
+               aria-labelledby="faq-header-2"
+               [style.maxHeight]="active === 2 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-14" | translate }}</p>
+            </div>
+          </div>
+        </li>
 
-            <button class="btn-button-theme contact-btn">Falar com o suporte</button>
+        <!-- 4 -->
+        <li class="acc-item" [class.open]="active === 3" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(3)"
+                  [attr.aria-expanded]="active === 3"
+                  aria-controls="faq-panel-3" id="faq-header-3">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">4</span>
+              <span class="acc-q">{{ "faq-15" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-3" role="region"
+               aria-labelledby="faq-header-3"
+               [style.maxHeight]="active === 3 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-16" | translate }}</p>
+            </div>
+          </div>
+        </li>
 
-            <ul class="highlights" aria-label="Diferenciais">
-                <li>Depósitos instantâneos via PIX e cartão</li>
-                <li>Execução rápida com spreads competitivos</li>
-                <li>Conta demo gratuita para praticar</li>
-            </ul>
-        </aside>
+        <!-- 5 -->
+        <li class="acc-item" [class.open]="active === 4" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(4)"
+                  [attr.aria-expanded]="active === 4"
+                  aria-controls="faq-panel-4" id="faq-header-4">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">5</span>
+              <span class="acc-q">{{ "faq-17" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-4" role="region"
+               aria-labelledby="faq-header-4"
+               [style.maxHeight]="active === 4 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-18" | translate }}</p>
+            </div>
+          </div>
+        </li>
 
-        <!-- COLUNA DIREITA (ACORDEÃO) -->
-        <div class="faq__right">
-            <ul class="accordion" role="list">
-                <li class="acc-item" *ngFor="let item of faqs; let i = index" [class.open]="active === i"
-                    role="listitem">
-                    <button class="acc-button" type="button" (click)="toggle(i)" [attr.aria-expanded]="active === i"
-                        [attr.aria-controls]="'faq-panel-' + i" [id]="'faq-header-' + i">
-                        <span class="acc-meta">
-                            <span class="acc-num" aria-hidden="true">{{ i + 1 }}</span>
-                            <span class="acc-q">{{ item.q }}</span>
-                        </span>
-                        <span class="acc-icon" aria-hidden="true"></span>
-                    </button>
+        <!-- 6 -->
+        <li class="acc-item" [class.open]="active === 5" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(5)"
+                  [attr.aria-expanded]="active === 5"
+                  aria-controls="faq-panel-5" id="faq-header-5">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">6</span>
+              <span class="acc-q">{{ "faq-19" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-5" role="region"
+               aria-labelledby="faq-header-5"
+               [style.maxHeight]="active === 5 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-20" | translate }}</p>
+            </div>
+          </div>
+        </li>
 
-                    <div class="acc-panel" [id]="'faq-panel-' + i" role="region"
-                        [attr.aria-labelledby]="'faq-header-' + i" [style.maxHeight]="active === i ? '420px' : '0px'">
-                        <div class="acc-content">
-                            <p class="acc-a">{{ item.a }}</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <!-- 7 -->
+        <li class="acc-item" [class.open]="active === 6" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(6)"
+                  [attr.aria-expanded]="active === 6"
+                  aria-controls="faq-panel-6" id="faq-header-6">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">7</span>
+              <span class="acc-q">{{ "faq-21" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-6" role="region"
+               aria-labelledby="faq-header-6"
+               [style.maxHeight]="active === 6 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-22" | translate }}</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- 8 -->
+        <li class="acc-item" [class.open]="active === 7" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(7)"
+                  [attr.aria-expanded]="active === 7"
+                  aria-controls="faq-panel-7" id="faq-header-7">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">8</span>
+              <span class="acc-q">{{ "faq-23" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-7" role="region"
+               aria-labelledby="faq-header-7"
+               [style.maxHeight]="active === 7 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-24" | translate }}</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- 9 -->
+        <li class="acc-item" [class.open]="active === 8" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(8)"
+                  [attr.aria-expanded]="active === 8"
+                  aria-controls="faq-panel-8" id="faq-header-8">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">9</span>
+              <span class="acc-q">{{ "faq-25" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-8" role="region"
+               aria-labelledby="faq-header-8"
+               [style.maxHeight]="active === 8 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-26" | translate }}</p>
+            </div>
+          </div>
+        </li>
+
+        <!-- 10 -->
+        <li class="acc-item" [class.open]="active === 9" role="listitem">
+          <button class="acc-button" type="button" (click)="toggle(9)"
+                  [attr.aria-expanded]="active === 9"
+                  aria-controls="faq-panel-9" id="faq-header-9">
+            <span class="acc-meta">
+              <span class="acc-num" aria-hidden="true">10</span>
+              <span class="acc-q">{{ "faq-27" | translate }}</span>
+            </span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="faq-panel-9" role="region"
+               aria-labelledby="faq-header-9"
+               [style.maxHeight]="active === 9 ? '420px' : '0px'">
+            <div class="acc-content">
+              <p class="acc-a">{{ "faq-28" | translate }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
+  </div>
 </section>
