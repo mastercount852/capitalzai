@@ -1,0 +1,140 @@
+/* ====== Base ====== */
+.reasons {
+    background: #ffffff;
+    padding: 56px 20px 40px;
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+/* Título */
+.title {
+    font-weight: 800;
+    font-size: clamp(24px, 2.6vw, 36px);
+    line-height: 1.15;
+    color: #121417;
+    text-align: left;
+    margin: 0 0 28px;
+}
+
+.title .brand {
+    color: #0fb266;
+    /* verde da marca */
+}
+
+/* ====== Cards ====== */
+.features {
+    --col-gap: 48px;
+    --row-gap: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--row-gap) var(--col-gap);
+    align-items: flex-start;
+}
+
+.feature-card {
+    /* 4 colunas no desktop */
+    flex: 1 1 calc((100% - 3 * var(--col-gap)) / 4);
+    min-width: 240px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-icon {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    user-select: none;
+    display: block;
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.0));
+    /* placeholder limpo */
+}
+
+.feature-title {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #111418;
+    margin: 4px 0 0;
+}
+
+.feature-text {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #253038;
+    margin: 0;
+}
+
+/* ====== CTA ====== */
+.cta {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.cta-sub {
+    font-size: 16px;
+    color: #1c2a32;
+    margin: 0 0 12px;
+}
+
+.cta-btn {
+    padding: 14px 22px;
+    /* usa estilo global da classe, aqui só reforço de tamanho */
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+/* ====== Responsividade ====== */
+/* 3 colunas */
+@media (max-width: 1100px) {
+    .feature-card {
+        flex-basis: calc((100% - 2 * var(--col-gap)) / 3);
+        max-width: 360px;
+    }
+}
+
+/* 2 colunas */
+@media (max-width: 820px) {
+    .title {
+        text-align: center;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .feature-card {
+        flex-basis: calc((100% - 1 * var(--col-gap)) / 2);
+        max-width: 420px;
+    }
+}
+
+/* 1 coluna */
+@media (max-width: 520px) {
+    .reasons {
+        padding: 44px 16px 32px;
+    }
+
+    .feature-card {
+        flex-basis: 100%;
+        max-width: 640px;
+
+        border: 2px solid rgb(228, 228, 228);
+        border-radius: 10px;
+        padding: 15px;
+        
+    }
+
+    .feature-title {
+        font-size: 17px;
+    }
+
+    .feature-text {
+        font-size: 14.5px;
+    }
+}

@@ -1,0 +1,52 @@
+<section class="faq">
+    <div class="faq__container">
+        <!-- COLUNA ESQUERDA -->
+        <aside class="faq__left">
+            <span class="badge">
+                <span class="badge__dot" aria-hidden="true"></span>
+                FAQ
+            </span>
+
+            <h2 class="title">
+                Tudo que você precisa saber sobre a nossa corretora
+            </h2>
+
+            <p class="subtitle">
+                Abertura de conta, depósitos/saques, custos, segurança, alavancagem e plataformas —
+                reunimos as respostas às perguntas mais comuns dos nossos clientes.
+            </p>
+
+            <button class="btn-button-theme contact-btn">Falar com o suporte</button>
+
+            <ul class="highlights" aria-label="Diferenciais">
+                <li>Depósitos instantâneos via PIX e cartão</li>
+                <li>Execução rápida com spreads competitivos</li>
+                <li>Conta demo gratuita para praticar</li>
+            </ul>
+        </aside>
+
+        <!-- COLUNA DIREITA (ACORDEÃO) -->
+        <div class="faq__right">
+            <ul class="accordion" role="list">
+                <li class="acc-item" *ngFor="let item of faqs; let i = index" [class.open]="active === i"
+                    role="listitem">
+                    <button class="acc-button" type="button" (click)="toggle(i)" [attr.aria-expanded]="active === i"
+                        [attr.aria-controls]="'faq-panel-' + i" [id]="'faq-header-' + i">
+                        <span class="acc-meta">
+                            <span class="acc-num" aria-hidden="true">{{ i + 1 }}</span>
+                            <span class="acc-q">{{ item.q }}</span>
+                        </span>
+                        <span class="acc-icon" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="acc-panel" [id]="'faq-panel-' + i" role="region"
+                        [attr.aria-labelledby]="'faq-header-' + i" [style.maxHeight]="active === i ? '420px' : '0px'">
+                        <div class="acc-content">
+                            <p class="acc-a">{{ item.a }}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

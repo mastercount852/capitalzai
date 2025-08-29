@@ -1,0 +1,110 @@
+.leiaut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.blocos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.blocos .b1 {
+    width: 100%;
+    max-width: 1000px;
+    padding-left: 150px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.blocos .b2 {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub {
+    background-color: #3d664f;
+    color: #FFF;
+    font-weight: bolder;
+    padding: 5px 10px;
+}
+
+.sub p {
+    margin: 0;
+}
+
+.title p {
+    font-size: 60px;
+    max-width: 100%;
+    font-weight: 1000;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 20px;
+    max-width: 80%;
+}
+
+
+
+
+
+@media (max-width:800px) {
+
+    .blocos {
+        flex-direction: column;
+    }
+
+    .blocos .b1 {
+        margin-left: 20px;
+        margin-bottom: 50px;
+        padding-left: 00px;
+    }
+
+    .title p {
+        font-size: 50px;
+        max-width: 90%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-button-theme {
+    font-size: 18px;
+    padding: 10px 25px;
+}
+
+img {
+    width: 90%;
+    max-width: 900px;
+}

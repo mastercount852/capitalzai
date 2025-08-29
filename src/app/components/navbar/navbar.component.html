@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg main-navbar navbar-dark" [class.scrolled]="!atTop">
+    <div class="container">
+        <!-- Logo (use imagem se quiser) -->
+        <a class="navbar-brand" href="#">
+            <span class="brand-text">Capital Zai</span>
+        </a>
+
+        <!-- Toggler mobile (Bootstrap bundle precisa estar incluído) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <!-- Central: links -->
+            <ul class="navbar-nav mx-lg-auto align-items-lg-center gap-lg-5">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="about-us" (click)="closeMenu()">Sobre nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="ativos" (click)="closeMenu()">Ativos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Account-types" (click)="closeMenu()">Tipos de conta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="contact" (click)="closeMenu()">Fale Conosco</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="faq" (click)="closeMenu()">FAQ</a>
+                </li>
+
+                <!-- Idioma (dropdown com bandeiras) -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle lang" href="#" id="langMenu" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="flag" aria-hidden="true">{{ currentFlag }}</span>
+                        <span>{{ currentLang }}</span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenu">
+                        <li *ngFor="let lang of languages">
+                            <button class="dropdown-item" (click)="setLang(lang)">
+                                <span class="flag" aria-hidden="true">{{ lang.flag }}</span>
+                                <span>{{ lang.label }}</span>
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <!-- (Opcional) CTA à direita
+      <a class="btn btn-button-theme d-none d-lg-inline-flex ms-lg-3" href="#register">Registrar-se</a> -->
+        </div>
+    </div>
+</nav>

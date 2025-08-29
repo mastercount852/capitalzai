@@ -1,0 +1,240 @@
+/* ===== Base da seção ===== */
+.reviews {
+    background: #8fb1a4;
+    /* fundo esverdeado do mock */
+    padding: 56px 20px;
+}
+
+.reviews__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    /* Flex principal */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px 40px;
+    flex-wrap: wrap;
+    /* empilha no mobile */
+}
+
+/* ===== Coluna esquerda ===== */
+.reviews__left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1 1 640px;
+    min-width: 320px;
+}
+
+.reviews__title {
+    margin: 0;
+    font-weight: 800;
+    color: #2b3f37;
+    letter-spacing: -0.2px;
+    line-height: 1.1;
+    font-size: clamp(24px, 3.6vw, 44px);
+}
+
+.reviews__subtitle {
+    margin: 0 0 8px;
+    color: #21352d;
+    font-size: 16px;
+}
+
+/* ===== Card / Carrossel ===== */
+.carousel {
+    display: flex;
+    /* flex container */
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 18px 44px;
+    border-radius: 8px;
+    background: #3b6555;
+    /* verde escuro do card */
+    color: #e9f3ee;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .12);
+    min-height: 160px;
+    width: min(820px, 100%);
+}
+
+/* topo: estrelas + data/hora */
+.card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stars {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.stars span {
+    color: rgba(255, 255, 255, .55);
+}
+
+.stars span.filled {
+    color: #ffffff;
+}
+
+.card__datetime {
+    color: #d3e3dc;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.card__text {
+    margin: 0;
+    color: #e6f0eb;
+    line-height: 1.55;
+    font-size: 14.8px;
+}
+
+/* rodapé do card: avatar + autor */
+.card__bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, .8);
+    position: relative;
+}
+
+.avatar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/></svg>') center/70% no-repeat;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z"/></svg>') center/70% no-repeat;
+    background: rgba(255, 255, 255, .85);
+}
+
+.author {
+    font-weight: 700;
+    color: #e9f3ee;
+}
+
+/* navegação do carrossel */
+.card__nav {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.nav-btn {
+    width: 36px;
+    height: 28px;
+    border: 0;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, .12);
+    color: #e8efe9;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .1s ease, background .2s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, .2);
+    transform: translateY(-1px);
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== Coluna direita ===== */
+.reviews__right {
+    flex: 0 1 360px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 42px;
+    /* alinha visual com o card à esquerda */
+}
+
+.all-title {
+    margin: 0;
+    font-weight: 800;
+    color: #243a31;
+    font-size: 20px;
+}
+
+.all-text {
+    margin: 0 0 6px;
+    color: #1e3129;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.all-btn {
+    align-self: flex-start;
+    padding: 12px 18px;
+    /* usa seu tema global + reforço de tamanho */
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 980px) {
+    .reviews__right {
+        padding-top: 8px;
+    }
+}
+
+@media (max-width: 760px) {
+    .reviews__container {
+        justify-content: center;
+    }
+
+    .reviews__left {
+        align-items: stretch;
+    }
+
+    .reviews__title,
+    .reviews__subtitle {
+        text-align: left;
+    }
+
+    .reviews__right {
+        align-items: flex-start;
+    }
+
+    .all-btn {
+        align-self: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .reviews {
+        padding: 44px 16px;
+    }
+
+    .card {
+        padding: 16px 16px 44px;
+    }
+
+    .card__text {
+        font-size: 14.2px;
+    }
+
+    .nav-btn {
+        width: 34px;
+        height: 26px;
+    }
+}

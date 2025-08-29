@@ -1,0 +1,136 @@
+<section class="contact-hero">
+    <div class="container hero__content">
+        <div class="hero__left">
+            <h1 class="hero__title">FALE CONOSCO</h1>
+            <p class="hero__subtitle">
+                Precisa de ajuda? Entre em contato com nossa equipe de suporte especializado!
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="support-intro">
+    <div class="container">
+        <h2 class="support__title">Estamos aqui para ajudar</h2>
+        <p class="support__sub">Suporte 24 horas, 7 dias por semana quando você precisar</p>
+        <p class="support__text">
+            Nossa equipe especializada de suporte ao cliente está disponível para prestar assistência onde
+            quer que você esteja e sempre que precisar. Entre em contato conosco por meio de métodos
+            convenientes – e-mail, Live Chat, WhatsApp e muito mais!
+        </p>
+    </div>
+</section>
+
+<section class="contact-form">
+    <div class="container">
+        <div class="form-card">
+            <div class="form-card__head">
+                <h3>Fale conosco</h3>
+                <p>Para fazer perguntas, obter assistência ou explorar nossos serviços, entre em contato com nossa
+                    equipe dedicada.</p>
+            </div>
+
+            <form class="form" (submit)="onSubmit($event)" novalidate>
+                <div class="fields">
+                    <!-- Nome -->
+                    <label class="field">
+                        <span class="label">Nome</span>
+                        <input type="text" name="firstName" placeholder="Ex.: John" required>
+                    </label>
+
+                    <!-- Sobrenome -->
+                    <label class="field">
+                        <span class="label">Sobrenome</span>
+                        <input type="text" name="lastName" placeholder="Ex.: Doe" required>
+                    </label>
+
+                    <!-- Email -->
+                    <label class="field">
+                        <span class="label">Email</span>
+                        <input type="email" name="email" placeholder="Ex.: joao@example.com" required>
+                    </label>
+
+                    <!-- País -->
+                    <label class="field">
+                        <span class="label">País</span>
+                        <select name="country" required>
+                            <option value="" selected disabled>Selecione seu país</option>
+                            <option *ngFor="let c of countries" [value]="c.code">{{ c.flag }} {{ c.name }}</option>
+                        </select>
+                    </label>
+
+                    <!-- DDI + Telefone -->
+                    <label class="field field--compact">
+                        <span class="label">Número de Telefone</span>
+                        <div class="phone">
+                            <select name="ddi" class="ddi" aria-label="DDI" required>
+                                <option value="+55">+55</option>
+                                <option value="+351">+351</option>
+                                <option value="+1">+1</option>
+                                <option value="+34">+34</option>
+                                <option value="+44">+44</option>
+                            </select>
+                            <input class="phone__input" type="tel" name="phone" placeholder="Ex.: (11) 96213-4567"
+                                required>
+                        </div>
+                    </label>
+
+                    <!-- Assunto -->
+                    <label class="field">
+                        <span class="label">Assunto</span>
+                        <select name="subject" required>
+                            <option value="" selected disabled>Selecionar</option>
+                            <option *ngFor="let s of subjects" [value]="s">{{ s }}</option>
+                        </select>
+                    </label>
+
+                    <!-- Mensagem -->
+                    <label class="field field--full">
+                        <span class="label">Envie-nos uma mensagem (opcional)</span>
+                        <textarea name="message" rows="3"
+                            placeholder="Por favor, informe sobre sua consulta"></textarea>
+                    </label>
+                </div>
+
+                <!-- Captcha + botão -->
+                <div class="form__foot">
+                    <label class="captcha">
+                        <input type="checkbox" name="notRobot" required>
+                        <span>Não sou um robô</span>
+                    </label>
+
+                    <button type="submit" class="btn-button-theme submit-btn">ENVIAR CONSULTA</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MODAL: Enviando → Sucesso ========== -->
+<div class="modal-overlay" [class.is-open]="showModal" (click)="overlayClick($event)">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="sendTitle"
+        (click)="$event.stopPropagation()">
+        <!-- Estado: carregando -->
+        <div *ngIf="isLoading" class="modal-body">
+            <div class="spinner" aria-hidden="true"></div>
+            <h3 id="sendTitle">Enviando sua solicitação…</h3>
+            <p>Estamos processando seus dados. Isso pode levar alguns segundos.</p>
+        </div>
+
+        <!-- Estado: sucesso -->
+        <div *ngIf="!isLoading && sent" class="modal-body success">
+            <div class="success-mark" aria-hidden="true">
+                <svg viewBox="0 0 52 52">
+                    <circle cx="26" cy="26" r="25" fill="none"></circle>
+                    <path d="M14 27.5l7.5 7.5L38 18" fill="none"></path>
+                </svg>
+            </div>
+            <h3 id="sendTitle">Mensagem enviada com sucesso!</h3>
+            <p>Sua solicitação foi recebida. Nossa equipe entrará em contato em breve.</p>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-button-theme" (click)="closeModal()">OK, fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

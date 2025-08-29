@@ -1,0 +1,247 @@
+.site-footer {
+    background: #0f1519;
+    color: #c9d3db;
+    padding-top: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* linha superior com leve gradiente */
+.site-footer::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, #1ad379, #0b7b4b);
+    opacity: .9;
+}
+
+.footer__wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 20px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    /* responsivo */
+    gap: 28px 36px;
+    justify-content: space-between;
+}
+
+/* ===== Coluna: Marca ===== */
+.footer__brand {
+    flex: 1 1 280px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.brand__logo {
+    display: inline-block;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: .2px;
+    color: #eaf3f0;
+}
+
+.brand__text {
+    margin: 0;
+    color: #a9b7c2;
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+.trust {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.trust__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #dce6ee;
+    font-size: 14px;
+}
+
+.trust__icon {
+    filter: saturate(0) brightness(1.4);
+}
+
+/* ===== Navegação ===== */
+.footer__nav {
+    flex: 2 1 520px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 36px;
+}
+
+.nav__block {
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav__title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+    color: #e1edf0;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav__list a {
+    color: #b8c7d1;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav__list a:hover {
+    color: #ffffff;
+}
+
+/* ===== Apps & Newsletter ===== */
+.footer__cta {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.cta__title {
+    margin: 8px 0 4px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #e1edf0;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #122029;
+    border: 1px solid #20323d;
+    border-radius: 10px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #d3e2ea;
+    font-weight: 700;
+    font-size: 13.5px;
+}
+
+.badge img {
+    width: 20px;
+    height: 20px;
+}
+
+.newsletter {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.newsletter__input {
+    flex: 1 1 auto;
+    background: #0d1a21;
+    border: 1px solid #223543;
+    color: #e8f2f7;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.newsletter__input::placeholder {
+    color: #8aa0b2;
+}
+
+.newsletter__btn {
+    border-radius: 10px;
+}
+
+/* ===== Barra inferior ===== */
+.footer__bar {
+    border-top: 1px solid #1e2b33;
+    padding: 14px 20px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copy {
+    margin: 0;
+    font-size: 13px;
+    color: #96a9b7;
+}
+
+.legal {
+    display: flex;
+    gap: 16px;
+}
+
+.legal a {
+    color: #a7b8c5;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.legal a:hover {
+    color: #ffffff;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 920px) {
+    .footer__nav {
+        gap: 20px 28px;
+    }
+}
+
+@media (max-width: 680px) {
+    .footer__wrap {
+        gap: 24px;
+    }
+
+    .footer__cta {
+        align-items: stretch;
+    }
+
+    .newsletter {
+        flex-direction: column;
+    }
+
+    .legal {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer__bar {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.badge {
+    user-select: none;
+}

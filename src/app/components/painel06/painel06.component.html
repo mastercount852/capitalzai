@@ -1,0 +1,46 @@
+<section class="reviews">
+    <div class="reviews__container">
+        <!-- ESQUERDA -->
+        <div class="reviews__left">
+            <h2 class="reviews__title">O que as pessoas dizem sobre nós</h2>
+            <p class="reviews__subtitle">Milhares de clientes que confiam e ganham diariamente!</p>
+
+            <!-- CARROSSEL -->
+            <div class="carousel" (mouseenter)="pause()" (mouseleave)="resume()">
+                <article class="card">
+                    <header class="card__top">
+                        <div class="stars" [attr.aria-label]="current.rating + ' de 5'">
+                            <span *ngFor="let _ of five; let i = index" [class.filled]="i < current.rating">★</span>
+                        </div>
+                        <span class="card__datetime">{{ current.date }}&nbsp;&nbsp;{{ current.time }}</span>
+                    </header>
+
+                    <p class="card__text">
+                        {{ current.text }}
+                    </p>
+
+                    <footer class="card__bottom">
+                        <div class="avatar" aria-hidden="true"></div>
+                        <div class="author">{{ current.author }}</div>
+                    </footer>
+
+                    <!-- NAV -->
+                    <div class="card__nav">
+                        <button class="nav-btn" (click)="prev()" aria-label="Anterior">‹</button>
+                        <button class="nav-btn" (click)="next()" aria-label="Próximo">›</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- DIREITA -->
+        <aside class="reviews__right">
+            <h3 class="all-title">Todas as avaliações:</h3>
+            <p class="all-text">
+                O feedback dos nossos clientes nos ajuda e fortalece para que mantenhamos a qualidade e a melhor
+                experiência de negociação do mercado.
+            </p>
+            <!-- <button type="button" class="btn-button-theme">FAZER A MINHA AVALIAÇÃO</button> -->
+        </aside>
+    </div>
+</section>

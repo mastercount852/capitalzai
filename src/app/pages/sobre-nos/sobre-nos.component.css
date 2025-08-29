@@ -1,0 +1,190 @@
+:host {
+    display: block;
+}
+
+/* ---------- Estrutura da página ---------- */
+.sobre {
+    background: linear-gradient(180deg, #0b0f10 0%, #0e1315 100%);
+    color: #e9f2ee;
+}
+
+/* Container central */
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ---------- HERO com imagem e overlay ---------- */
+.hero {
+    position: relative;
+    padding-top: 24px;
+}
+
+.hero-media {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .45);
+}
+
+.hero-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Gradiente superior claro e inferior escuro */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20, 200, 180, 0.18) 0%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.78) 100%);
+    pointer-events: none;
+}
+
+/* Conteúdo centralizado no hero */
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.hero-content h1 {
+    font-weight: 900;
+    font-size: clamp(26px, 5vw, 42px);
+    margin: 0 0 18px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+}
+
+.lead {
+    max-width: 980px;
+    font-size: clamp(16px, 2.3vw, 28px);
+    line-height: 1.35;
+    color: #ffffff;
+    margin: 0 0 18px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+}
+
+.sub {
+    font-size: clamp(14px, 1.8vw, 22px);
+    color: #e9f2ee;
+    opacity: .95;
+}
+
+/* ---------- Texto institucional abaixo do hero ---------- */
+.about {
+    padding: 36px 16px 8px;
+    text-align: center;
+}
+
+.about p {
+    margin: 0 auto 14px;
+    max-width: 900px;
+    color: #e9f2ee;
+    line-height: 1.6;
+    font-size: 15.5px;
+}
+
+.about p.last {
+    margin-bottom: 24px;
+}
+
+.about .brand {
+    color: #00d46a;
+    font-weight: 800;
+}
+
+/* ---------- Blocos Missão / Visão / Valores ---------- */
+.mvv {
+    padding: 18px 16px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    align-items: center;
+}
+
+.block {
+    max-width: 760px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .25));
+}
+
+.block-title {
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 900;
+    color: #00d46a;
+    margin: 0 0 8px;
+}
+
+.block-text {
+    color: #e9f2ee;
+    opacity: .95;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Lista de valores com bullets verdes */
+.values {
+    list-style: none;
+    padding: 0;
+    margin: 8px auto 0;
+    max-width: 820px;
+    color: #e9f2ee;
+}
+
+.values li {
+    position: relative;
+    padding-left: 22px;
+    margin: 8px 0;
+    line-height: 1.6;
+    text-align: left !important;
+}
+
+.values li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #00d46a;
+    position: absolute;
+    left: 2px;
+    top: 0.75em;
+    transform: translateY(-50%);
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 18px;
+        padding-top: 150px;
+    }
+
+    .about p {
+        font-size: 14.5px;
+    }
+
+    .block-text {
+        font-size: 14.5px;
+    }
+
+    .values li {
+        font-size: 14.5px;
+    }
+}

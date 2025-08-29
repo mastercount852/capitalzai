@@ -1,0 +1,116 @@
+.leiaut {
+    padding: 56px 0;
+    background-image: linear-gradient(90deg, #eef2f9 0%, #ccfde1 100%);
+}
+
+/* Contêiner principal - 2 colunas no desktop, empilha no mobile */
+.hero {
+    width: 100%;
+    max-width: calc(100% - 100px);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    /* permite quebrar para responsividade */
+    align-items: center;
+    justify-content: center;
+    gap: 24px 36px;
+    /* linhas x colunas */
+    padding: 0 30px;
+}
+
+/* Coluna esquerda */
+.hero-left {
+    flex: 1 1 520px;
+    /* cresce, encolhe e tem base de ~520px */
+    width: 100%;
+    max-width: 800px;
+    padding-right: 12px;
+}
+
+.hero-title {
+    font-weight: 800;
+    line-height: 1.05;
+    color: #0f141a;
+    letter-spacing: -0.5px;
+    margin: 0 0 28px 0;
+    font-size: clamp(28px, 3.6vw, 54px);
+}
+
+/* Métricas com Flexbox (mantém 2 colunas x 3 linhas no desktop) */
+.stats {
+    --col-gap: 34px;
+    --row-gap: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--row-gap) var(--col-gap);
+}
+
+.stat {
+    /* 2 colunas exatas: (100% - 1 gap) / 2 */
+    flex: 0 0 calc((100% - var(--col-gap)) / 2);
+    display: flex;
+    /* trocado de grid para flex */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.stat-value {
+    font-weight: 800;
+    font-size: clamp(28px, 3.2vw, 44px);
+    color: #29cc70;
+    line-height: 1;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+    white-space: nowrap;
+    /* evita quebra do $50 000 */
+}
+
+.stat-label {
+    font-size: clamp(13px, 1.2vw, 15px);
+    color: #3d664f;
+}
+
+/* Coluna direita (imagem) */
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptop {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, .95));
+    user-select: none;
+}
+
+/* ====== Breakpoints ====== */
+
+/* <= 1024px: ajusta base para caber melhor */
+@media (max-width: 780px) {
+    .stats {
+        margin-bottom: 50px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .hero-left {
+        padding: 0;
+        margin-bottom: -150px;
+    }
+
+    .stats {
+        padding: 10px 30px;
+        margin-bottom: 0;
+    }
+
+    .hero-title {
+        margin: auto;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}

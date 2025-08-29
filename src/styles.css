@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-button-theme {
+    border: none;
+    background-image: linear-gradient(to right, #29cc70, #3d664f);
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-button-theme:hover {
+    background-image: linear-gradient(to right, #1de072, #428a61);
+}

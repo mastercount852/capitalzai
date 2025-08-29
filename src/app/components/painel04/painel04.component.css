@@ -1,0 +1,166 @@
+.leiaut {
+    padding-bottom: 200px;
+    padding-top: 150px;
+    background-color: #131714;
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    min-width: 300px;
+    background: transparent;
+    border: none;
+}
+
+.bloco {
+    background: #29332d;
+    border-radius: 20px;
+    min-height: 100px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.btn-card {
+    background: #4a5d51;
+    border: none;
+    padding: 10px 20px;
+    color: #f3f3f3;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-card:hover {
+    background: #597764;
+}
+
+img {
+    max-height: 150px;
+    width: auto;
+    margin-top: -100px;
+}
+
+.title {
+    color: #f3f3f3;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+.img-bonus {
+    width: 70%;
+    margin: auto;
+    height: 260px;
+    background-image: url('https://i.imgur.com/j6bYBpi.png');
+    margin-bottom: 1px;
+    background-position: left top;
+    background-size: cover;
+    margin-top: -150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 10%;
+}
+
+.img-bonus .title-bonus {
+    color: #fff;
+    font-size: 35px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.img-bonus .subtitle-bonus {
+    color: #cfcfcf;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+@media (max-width:800px) {
+
+    .leiaut {
+        padding-bottom: 400px;
+    }
+
+
+    .card {
+        margin: 50px 0;
+    }
+
+
+
+
+
+    .img-bonus {
+        margin: auto;
+        height: 700px;
+        margin-bottom: 1px;
+        background-size: cover;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+
+
+        margin-top: -350px;
+        width: 80%;
+        justify-content: flex-start;
+        background-image: url('https://i.imgur.com/b3F8GmC.png');
+        background-position: center bottom;
+    }
+
+
+    .text {
+        align-items: center;
+        margin-left: 0;
+    }
+
+
+    .img-bonus .title-bonus {
+        margin-bottom: 0px;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 50px;
+        max-width: 90%;
+    }
+
+    .img-bonus .subtitle-bonus {
+        text-align: center;
+        margin-top: 50px;
+        max-width: 90%;
+    }
+}

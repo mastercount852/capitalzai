@@ -1,0 +1,111 @@
+:host {
+    display: block;
+}
+
+/* Navbar fixa e transparente no topo */
+.main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+background: rgba(12, 22, 20, 0.82);
+    border-bottom-color: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: saturate(160%) blur(10px);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+}
+
+/* Quando rolar, aplica fundo/blur */
+.main-navbar.scrolled {
+    background: rgba(12, 22, 20, 0.82);
+    border-bottom-color: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: saturate(160%) blur(10px);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+}
+
+/* Marca e links */
+.navbar-brand .brand-text {
+    color: #e8f3ee;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    font-size: 1.05rem;
+}
+
+.nav-link {
+    color: #e8f3ee;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    opacity: 0.9;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* Espaçamento amplo entre itens no desktop */
+@media (min-width: 992px) {
+    .navbar-nav {
+        gap: 3.5rem !important;
+    }
+}
+
+/* Toggler */
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-dark .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.15rem rgba(26, 211, 121, 0.35);
+}
+
+/* Idioma (globo + texto) */
+.lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.globe {
+    width: 20px;
+    height: 20px;
+}
+
+/* Dropdown escuro customizado */
+.dropdown-menu {
+    background: #0f1519;
+    border: 1px solid #1e2b33;
+    border-radius: 10px;
+    padding: 6px;
+    min-width: 180px;
+}
+
+.dropdown-item {
+    color: #c6d7cf;
+    border-radius: 8px;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #ffffff;
+    background: rgba(26, 211, 121, 0.08);
+}
+
+/* Bandeiras (emoji) */
+.lang .flag {
+    font-size: 18px;
+    display: inline-flex;
+    margin-right: 8px;
+    transform: translateY(1px);
+}
+
+.dropdown-item .flag {
+    font-size: 18px;
+    margin-right: 8px;
+    width: 1.25em;
+    /* mantém alinhado */
+    text-align: center;
+}
