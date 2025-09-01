@@ -1,61 +1,80 @@
-<nav class="navbar navbar-expand-lg main-navbar navbar-dark" [class.scrolled]="!atTop">
-    <div class="container">
-        <!-- Logo (use imagem se quiser) -->
-        <a class="navbar-brand" routerLink="/">
-            <span class="brand-text"><img src="https://i.imgur.com/24zt0pu.png" alt=""></span>
-        </a>
+<nav class="navbar navbar-expand-lg main-navbar navbar-dark">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="/">
+                <span class="brand-text"><img src="https://i.imgur.com/24zt0pu.png" alt="Logo"></span>
+            </a>
 
-        <!-- Toggler mobile (Bootstrap bundle precisa estar incluído) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-            aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <!-- Toggler mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="mainNav">
-            <!-- Central: links -->
-            <ul class="navbar-nav mx-lg-auto align-items-lg-center gap-lg-5">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="about-us" (click)="closeMenu()">{{ "navbar-01" | translate }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="ativos" (click)="closeMenu()">{{ "navbar-02" | translate }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="Account-types" (click)="closeMenu()">{{ "navbar-03" | translate }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="contact" (click)="closeMenu()">{{ "navbar-04" | translate }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="faq" (click)="closeMenu()">{{ "navbar-05" | translate }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="How-it-works" (click)="closeMenu()">{{ "navbar-08" | translate }}</a>
-                </li>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <!-- Central: links -->
+                <ul class="navbar-nav mx-lg-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ativos">Ativos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Account-types">Tipos de Conta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="How-it-works">Como Funciona</a>
+                    </li>
 
-                <!-- Idioma (dropdown com bandeiras) -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle lang" href="#" id="langMenu" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="flag" aria-hidden="true">{{ currentFlag }}</span>
-                        <span>{{ currentLang }}</span>
-                    </a>
+                    <!-- Idioma (dropdown com bandeiras) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle lang" href="#" id="langMenu" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="flag" aria-hidden="true">🇧🇷</span>
+                            <span>Português</span>
+                        </a>
 
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenu">
-                        <li *ngFor="let lang of languages">
-                            <button class="dropdown-item" (click)="setLang(lang)">
-                                <span class="flag" aria-hidden="true">{{ lang.flag }}</span>
-                                <span>{{ lang.label }}</span>
-                            </button>
-                        </li>
-                    </ul>
-                </li>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenu">
+                            <li>
+                                <button class="dropdown-item">
+                                    <span class="flag" aria-hidden="true">🇺🇸</span>
+                                    <span>English</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item">
+                                    <span class="flag" aria-hidden="true">🇪🇸</span>
+                                    <span>Español</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 
-            </ul>
-
-
-            <button class="btn btn-button-theme d-none d-lg-inline-flex ms-lg-3" href="#login">{{ "navbar-06" | translate }}</button>
-            <button class="btn btn-button-theme d-none d-lg-inline-flex ms-lg-3" href="#register">{{ "navbar-07" | translate }}</button>
+                <!-- Botões - visíveis apenas em desktop -->
+                <div class="desktop-buttons">
+                    <button class="btn btn-button-theme d-none d-lg-inline-flex" href="#login">Login</button>
+                    <button class="btn btn-button-theme d-none d-lg-inline-flex" href="#register">Registrar</button>
+                </div>
+                
+                <!-- Botões - visíveis apenas em mobile -->
+                <div class="d-lg-none btn-mobile-group">
+                    <button class="btn btn-button-theme" href="#login">Login</button>
+                    <button class="btn btn-button-theme" href="#register">Registrar</button>
+                </div>
+            </div>
         </div>
+    </nav>
+
+    <!-- Conteúdo de exemplo para testar scroll -->
+    <div style="height: 150vh; padding-top: 80px; text-align: center;">
+        <h1>Conteúdo da Página</h1>
+        <p>Role para baixo para ver o comportamento da navbar ao scrollar</p>
     </div>
-</nav>
