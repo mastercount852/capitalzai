@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'Account-types', component: TiposDeContaComponent },
   { path: 'faq', component: Painel09Component },
   { path: 'contact', component: Painel010Component },
-  { path: 'ativos', component: AtivosComponent },
+  { path: 'actives', component: AtivosComponent },
   { path: 'about-us', component: SobreNosComponent },
   { path: 'How-it-works', component: ComoFuncionaComponent },
 ];

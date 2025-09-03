@@ -1,74 +1,69 @@
 <nav class="navbar navbar-expand-lg main-navbar navbar-dark">
-        <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand" href="/">
-                <span class="brand-text"><img src="https://i.imgur.com/24zt0pu.png" alt="Logo"></span>
-            </a>
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="/">
+            <span class="brand-text"><img src="https://i.imgur.com/24zt0pu.png" alt="Logo"></span>
+        </a>
 
-            <!-- Toggler mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- Toggler mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="mainNav">
-                <!-- Central: links -->
-                <ul class="navbar-nav mx-lg-auto align-items-lg-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about-us">Sobre nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ativos">Ativos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Account-types">Tipos de Conta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="How-it-works">Como Funciona</a>
-                    </li>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <!-- Central: links -->
+            <ul class="navbar-nav mx-lg-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us">{{ "navbar-01" | translate }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="actives">{{ "navbar-02" | translate }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Account-types">{{ "navbar-03" | translate }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact">{{ "navbar-04" | translate }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq">{{ "navbar-05" | translate }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="How-it-works">{{ "navbar-08" | translate }}</a>
+                </li>
 
-                    <!-- Idioma (dropdown com bandeiras) -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle lang" href="#" id="langMenu" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="flag" aria-hidden="true">🇧🇷</span>
-                            <span>Português</span>
-                        </a>
+                <!-- Idioma (dropdown com bandeiras) -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle lang" href="#" id="langMenu" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" (click)="$event.preventDefault()">
+                        <span class="flag" aria-hidden="true">{{ currentFlag }}</span>
+                        <span>{{ currentLang }}</span>
+                    </a>
 
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenu">
-                            <li>
-                                <button class="dropdown-item">
-                                    <span class="flag" aria-hidden="true">🇺🇸</span>
-                                    <span>English</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="dropdown-item">
-                                    <span class="flag" aria-hidden="true">🇪🇸</span>
-                                    <span>Español</span>
-                                </button>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenu">
+                        <li *ngFor="let l of languages">
+                            <button class="dropdown-item" type="button" (click)="setLang(l)">
+                                <span class="flag" aria-hidden="true">{{ l.flag }}</span>
+                                <span>{{ l.label }}</span>
+                            </button>
+                        </li>
+                    </ul>
+                </li>
 
-                <!-- Botões - visíveis apenas em desktop -->
-                <div class="desktop-buttons">
-                    <button class="btn btn-button-theme d-none d-lg-inline-flex" href="#login">Login</button>
-                    <button class="btn btn-button-theme d-none d-lg-inline-flex" href="#register">Registrar</button>
-                </div>
-                
-                <!-- Botões - visíveis apenas em mobile -->
-                <div class="d-lg-none btn-mobile-group">
-                    <button class="btn btn-button-theme" href="#login">Login</button>
-                    <button class="btn btn-button-theme" href="#register">Registrar</button>
-                </div>
+            </ul>
+
+            <!-- Botões - visíveis apenas em desktop -->
+            <div class="desktop-buttons">
+                <button class="btn btn-button-theme d-none d-lg-inline-flex" (click)="routerLogin()">{{ "navbar-06" | translate }}</button>
+                <button class="btn btn-button-theme d-none d-lg-inline-flex" (click)="routerCadastro()">{{ "navbar-07" | translate }}</button>
+            </div>
+
+            <!-- Botões - visíveis apenas em mobile -->
+            <div class="d-lg-none btn-mobile-group">
+                <button class="btn btn-button-theme" (click)="routerLogin()">{{ "navbar-06" | translate }}</button>
+                <button class="btn btn-button-theme" (click)="routerCadastro()">{{ "navbar-07" | translate }}</button>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
