@@ -12,4 +12,12 @@ export class Painel05Component implements OnInit {
   ngOnInit(): void {
   }
 
+  routerLogin() {
+    window.location.href = 'https://app.capitalzai.com/';
+  }
+
+  routerCadastro() {
+    window.location.href = 'https://app.capitalzai.com/user-registration';
+  }
+
 }

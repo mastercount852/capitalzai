@@ -5,23 +5,20 @@
             <a class="brand" href="/" aria-label="Página inicial">
                 <span class="brand__logo"><img src="https://i.imgur.com/24zt0pu.png" alt=""></span>
             </a>
-            <p class="brand__text">
-                Plataforma completa para operar Forex, Ações, Cripto, Índices e Commodities com execução rápida,
-                depósitos instantâneos e suporte dedicado.
-            </p>
+            <p class="brand__text">{{ 'footer-01' | translate }}</p>
 
             <div class="trust">
                 <div class="trust__item">
                     <span class="trust__icon" aria-hidden="true">🔒</span>
-                    <span>Conexão segura (SSL)</span>
+                    <span>{{ 'footer-02' | translate }}</span>
                 </div>
                 <div class="trust__item">
                     <span class="trust__icon" aria-hidden="true">🛡️</span>
-                    <span>Fundos segregados</span>
+                    <span>{{ 'footer-03' | translate }}</span>
                 </div>
                 <div class="trust__item">
                     <span class="trust__icon" aria-hidden="true">✅</span>
-                    <span>Conformidade &amp; KYC</span>
+                    <span>{{ 'footer-04' | translate }}</span>
                 </div>
             </div>
         </div>
@@ -29,65 +26,75 @@
         <!-- COLUNA: Navegação -->
         <nav class="footer__col footer__nav" aria-label="Links principais">
             <div class="nav__block">
-                <h4 class="nav__title">Plataforma</h4>
+                <h4 class="nav__title">{{ 'footer-10' | translate }}</h4>
                 <ul class="nav__list">
-                    <li><a routerLink="about-us">Sobre nós</a></li>
-                    <li><a routerLink="contact">Fale conosco</a></li>
+                    <li><a routerLink="about-us">{{ 'footer-11' | translate }}</a></li>
+                    <li><a routerLink="contact">{{ 'footer-12' | translate }}</a></li>
                 </ul>
             </div>
             <div class="nav__block">
-                <h4 class="nav__title">Mercado</h4>
+                <h4 class="nav__title">{{ 'footer-13' | translate }}</h4>
                 <ul class="nav__list">
-                    <li><a routerLink="ativos">Ativos</a></li>
+                    <li><a routerLink="ativos">{{ 'footer-14' | translate }}</a></li>
                 </ul>
             </div>
             <div class="nav__block">
-                <h4 class="nav__title">Ingressar</h4>
+                <h4 class="nav__title">{{ 'footer-15' | translate }}</h4>
                 <ul class="nav__list">
-                    <li><a routerLink="Account-types">Tipos de conta</a></li>
+                    <li><a routerLink="Account-types">{{ 'footer-16' | translate }}</a></li>
                 </ul>
             </div>
             <div class="nav__block">
-                <h4 class="nav__title">Duvidas</h4>
+                <h4 class="nav__title">{{ 'footer-17' | translate }}</h4>
                 <ul class="nav__list">
-                    <li><a routerLink="faq">FAQ</a></li>
+                    <li><a routerLink="faq">{{ 'footer-18' | translate }}</a></li>
                 </ul>
             </div>
         </nav>
 
-        <!-- COLUNA: Apps & Newsletter -->
+        <!-- COLUNA: Apps -->
         <div class="footer__col footer__cta">
-            <h4 class="cta__title">Baixe o App</h4>
+            <h4 class="cta__title">{{ 'footer-20' | translate }}</h4>
             <div class="badges">
                 <a class="badge" aria-label="Android">
                     <img src="https://i.imgur.com/mqz61F2.png" alt="" />
-                    <span>Android</span>
+                    <span>{{ 'footer-21' | translate }}</span>
                 </a>
                 <a class="badge" aria-label="App Store">
                     <img src="https://i.imgur.com/U9FSKCz.png" alt="" />
-                    <span>App Store</span>
+                    <span>{{ 'footer-22' | translate }}</span>
                 </a>
                 <a class="badge" aria-label="Web Trader">
                     <img src="https://i.imgur.com/bWX2DFc.png" alt="" />
-                    <span>Web</span>
+                    <span>{{ 'footer-23' | translate }}</span>
                 </a>
             </div>
-
-            <!-- <h4 class="cta__title">Assine nossa newsletter</h4>
-            <form class="newsletter" action="#" method="post" novalidate>
-                <input class="newsletter__input" type="email" placeholder="Seu e-mail" aria-label="Seu e-mail">
-                <button type="submit" class="btn-button-theme newsletter__btn">Assinar</button>
-            </form> -->
         </div>
     </div>
 
+    <!-- INFORMAÇÕES LEGAIS / AVISO DE RISCO -->
+    <section class="footer__disclaimer" aria-label="Informações legais e aviso de risco">
+        <h4 class="disclaimer__title">{{ 'footer-30' | translate }}</h4>
+        <div class="disclaimer__text">
+            <p><strong>Capital Zai</strong> {{ 'footer-31' | translate }}</p>
+            <p>{{ 'footer-32' | translate }}</p>
+            <p>{{ 'footer-33' | translate }}</p>
+            <p><strong>{{ ('footer-34' | translate).split(':')[0] }}</strong>{{ ( 'footer-34' | translate ).slice(
+                ('footer-34' | translate).indexOf(':') + 1 ) }}</p>
+            <p>{{ 'footer-35' | translate }}</p>
+            <p>{{ 'footer-36' | translate }}</p>
+            <p>{{ 'footer-37' | translate }}</p>
+            <p class="disclaimer__copyright">{{ 'footer-38' | translate }}</p>
+        </div>
+    </section>
+
     <div class="footer__bar">
-        <p class="copy">© {{ currentYear }} Capital Zai — Todos os direitos reservados.</p>
+        <p class="copy">{{ 'footer-40' | translate:{ year: currentYear } }}</p>
         <nav class="legal" aria-label="Links legais">
-            <a href="#">Termos de Uso</a>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Política de Cookies</a>
-            <a href="#">Divulgação de Risco</a>
+            <a href="#">{{ 'footer-41' | translate }}</a>
+            <a href="#">{{ 'footer-42' | translate }}</a>
+            <a href="#">{{ 'footer-43' | translate }}</a>
+            <a href="#">{{ 'footer-44' | translate }}</a>
         </nav>
     </div>
 </footer>

@@ -68,6 +68,11 @@
     /* verde acinzentado */
     box-shadow: 0 1px 0 rgba(255, 255, 255, .4), inset 0 8px 24px rgba(0, 0, 0, .08);
     margin: 10px 5px;
+    cursor: pointer;
+}
+
+.store__badge:hover {
+    background: #bfe0cf;
 }
 
 .store__icon {

@@ -21,7 +21,6 @@
     padding: 28px 20px 22px;
     display: flex;
     flex-wrap: wrap;
-    /* responsivo */
     gap: 28px 36px;
     justify-content: space-between;
 }
@@ -152,6 +151,7 @@
     color: #d3e2ea;
     font-weight: 700;
     font-size: 13.5px;
+    user-select: none;
 }
 
 .badge img {
@@ -181,6 +181,55 @@
 
 .newsletter__btn {
     border-radius: 10px;
+}
+
+/* ===== INFORMAÇÕES LEGAIS ===== */
+.footer__disclaimer {
+    border-top: 1px solid #1a2730;
+    background: linear-gradient(180deg, rgba(8, 13, 16, 0.35) 0%, rgba(8, 13, 16, 0) 100%);
+}
+
+.footer__disclaimer .disclaimer__title {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 20px 4px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #e1edf0;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.footer__disclaimer .disclaimer__text {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 6px 20px 18px;
+    color: #a6b6c3;
+    font-size: 13px;
+    line-height: 1.7;
+    column-gap: 32px;
+}
+
+.footer__disclaimer .disclaimer__text p {
+    margin: 0 0 12px;
+}
+
+.footer__disclaimer .disclaimer__text strong {
+    color: #dfe9ef;
+    font-weight: 800;
+}
+
+.footer__disclaimer .disclaimer__copyright {
+    color: #8fa2b1;
+    font-size: 12.5px;
+    margin-top: 8px;
+}
+
+/* 2 colunas no desktop */
+@media (min-width: 980px) {
+    .footer__disclaimer .disclaimer__text {
+        column-count: 2;
+    }
 }
 
 /* ===== Barra inferior ===== */
@@ -244,8 +293,4 @@
         justify-content: center;
         text-align: center;
     }
-}
-
-.badge {
-    user-select: none;
 }

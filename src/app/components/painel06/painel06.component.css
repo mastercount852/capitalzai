@@ -190,6 +190,14 @@
     letter-spacing: .2px;
 }
 
+.reviews__right p {
+    cursor: pointer;
+}
+
+.reviews__right p:hover {
+    color: #fff;
+}
+
 /* ===== Responsividade ===== */
 @media (max-width: 980px) {
     .reviews__right {
