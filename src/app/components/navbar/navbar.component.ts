@@ -82,7 +82,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   routerLogin() {
-    window.location.href = 'https://app.capitalzai.com/';
+    window.location.href = 'https://app.capitalzai.com/login';
   }
 
   routerCadastro() {
