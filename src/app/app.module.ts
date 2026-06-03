@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PainelManutencaoComponent } from './components/painel-manutencao/painel-manutencao.component';
 import { Painel01Component } from './components/painel01/painel01.component';
 import { Painel02Component } from './components/painel02/painel02.component';
 import { Painel03Component } from './components/painel03/painel03.component';
@@ -32,6 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    PainelManutencaoComponent,
     HomeComponent,
     Painel01Component,
     Painel02Component,
