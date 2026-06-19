@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg main-navbar navbar-dark">
+<nav class="navbar navbar-expand-xl main-navbar navbar-dark">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand" href="/">
@@ -13,7 +13,7 @@
 
         <div class="collapse navbar-collapse" id="mainNav">
             <!-- Central: links -->
-            <ul class="navbar-nav mx-lg-auto align-items-lg-center">
+            <ul class="navbar-nav mx-xl-auto align-items-xl-center">
                 <li class="nav-item">
                     <a class="nav-link" href="about-us">{{ "navbar-01" | translate }}</a>
                 </li>
@@ -55,12 +55,12 @@
 
             <!-- Botões - visíveis apenas em desktop -->
             <div class="desktop-buttons">
-                <button class="btn btn-button-theme d-none d-lg-inline-flex" (click)="routerLogin()">{{ "navbar-06" | translate }}</button>
-                <button class="btn btn-button-theme d-none d-lg-inline-flex" (click)="routerCadastro()">{{ "navbar-07" | translate }}</button>
+                <button class="btn btn-button-theme d-none d-xl-inline-flex" (click)="routerLogin()">{{ "navbar-06" | translate }}</button>
+                <button class="btn btn-button-theme d-none d-xl-inline-flex" (click)="routerCadastro()">{{ "navbar-07" | translate }}</button>
             </div>
 
             <!-- Botões - visíveis apenas em mobile -->
-            <div class="d-lg-none btn-mobile-group">
+            <div class="d-xl-none btn-mobile-group">
                 <button class="btn btn-button-theme" (click)="routerLogin()">{{ "navbar-06" | translate }}</button>
                 <button class="btn btn-button-theme" (click)="routerCadastro()">{{ "navbar-07" | translate }}</button>
             </div>

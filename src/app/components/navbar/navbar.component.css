@@ -52,7 +52,7 @@
         }
 
         /* Espaçamento amplo entre itens no desktop */
-        @media (min-width: 992px) {
+        @media (min-width: 1200px) {
             .navbar-nav {
                 gap: 1.5rem !important;
             }
@@ -125,8 +125,8 @@
             white-space: nowrap;
         }
 
-        /* Ajustes de responsividade */
-        @media (max-width: 991.98px) {
+        /* Ajustes de responsividade (menu hambúrguer abaixo de 1200px) */
+        @media (max-width: 1199.98px) {
             .navbar-collapse {
                 padding: 1rem 0;
             }
@@ -152,10 +152,39 @@
             }
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1200px) {
             .desktop-buttons {
                 display: flex;
                 align-items: center;
                 gap: 0.8rem;
+            }
+        }
+
+        /* Notebooks e telas intermediárias (1200–1399): compacta o menu para caber sem sobrepor */
+        @media (min-width: 1200px) and (max-width: 1399.98px) {
+            .navbar-nav {
+                gap: 0.6rem !important;
+            }
+
+            .nav-link {
+                font-size: 0.875rem;
+                letter-spacing: 0;
+            }
+
+            .desktop-buttons {
+                gap: 0.5rem;
+            }
+
+            .btn-button-theme {
+                padding: 5px 14px;
+                font-size: 13px;
+            }
+
+            .lang {
+                gap: 6px;
+            }
+
+            .lang .flag {
+                margin-right: 4px;
             }
         }
